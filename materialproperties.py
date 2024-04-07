@@ -50,12 +50,12 @@ for material in selected_materials:
             line=dict(width=0, color='black')
         ),
         name=material,
-        hovertemplate=f'{x_axis}: %{{x}}<br>{y_axis}: %{{y}}'
+        hovertemplate=f'{y_axis}: %{{y}}<br>{x_axis}: %{{x}}'
     ))
     # Add text annotations for material names inside the circles
     fig.add_annotation(
-        y=material_data[y_axis].iloc[0],
         x=material_data[x_axis].iloc[0],
+        y=material_data[y_axis].iloc[0],
         text=material,
         showarrow=False,
         font=dict(color='white', size=12)
