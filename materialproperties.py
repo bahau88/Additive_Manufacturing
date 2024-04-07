@@ -7,7 +7,7 @@ import random
 @st.cache
 def load_data():
     df = pd.read_csv('https://raw.githubusercontent.com/bahau88/Additive_Manufacturing/main/materialpropertiescsv.csv')
-    return df
+    return df.copy()  # Create a copy of the dataframe
 
 df = load_data()
 
@@ -17,7 +17,6 @@ numeric_cols = ['Elastic Modulus', 'Shear Modulus', 'Mass Density', 'Tensile Str
                 'Thermal Conductivity', 'Specific Heat', 'Material Damping Ratio', 
                 'Minimum Temperature', 'Maximum Temperature', 'Electricity Conductivity', 'Price']
 
-# Clean the data frame
 for col in numeric_cols:
     df[col] = df[col].replace(',', '', regex=True)
     df[col] = pd.to_numeric(df[col], errors='coerce')
@@ -26,7 +25,7 @@ for col in numeric_cols:
 selected_materials = st.multiselect("Select Material(s)", df['Material'].unique())
 
 # Filter the dataset based on selected materials
-filtered_data = df[df['Material'].isin(selected_materials)]
+filtered_data = df[df['Material'].isin(selected_materials)].copy()  # Create a copy of the filtered dataframe
 
 # Axis selection
 x_axis = st.selectbox("Select X Axis", numeric_cols)
@@ -45,10 +44,10 @@ for material in selected_materials:
         y=material_data[y_axis],
         mode='markers',
         marker=dict(
-            size=50,  # Adjust the size of the markers
+            size=30,  # Adjust the size of the markers
             symbol='circle',
             color=color,  # Use random color
-            line=dict(width=, color='black')
+            line=dict(width=1, color='black')
         ),
         name=material,
         hovertemplate=f'{x_axis}: %{{x}}<br>{y_axis}: %{{y}}'
