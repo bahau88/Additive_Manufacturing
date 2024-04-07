@@ -1,0 +1,5 @@
+Material,Elastic Modulus,Poisson Ratio,Shear Modulus,Mass Density,Tensile Strength,Compressive Strength,Yield Strength,Thermal Expansion Coefficient,Thermal Conductivity,Specific Heat,Material Damping Ratio,Minimum Temperature,Maximum Temperature,Electricity Conductivity,Price
+AISI 304,"193,000,000",0.3,"75,000,000",8000,"505,000","505,000","215,000",0.0000173,16.2,0.5,,870,-100,1450000,3
+PEEK,3600000000,0.4,"1,380,000,000",1300,"100,000,000","110,000,000","97,000,000",0.00004,0.25,1.3,,250,-60,1E-13,300
+ABS,1800000000,0.35,810000000,1050,40000000,41000000,42000000,0.00008,0.15,1.1,,80,-20,1E-12,3
+PLA,"3,000,000",0.37,"1,300,000",1250,"50,000","60,000","45,000",0.00007,0.13,1.8,,50,-20,1E-14,12.5
