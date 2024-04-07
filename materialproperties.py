@@ -54,8 +54,8 @@ for material in selected_materials:
     ))
     # Add text annotations for material names inside the circles
     fig.add_annotation(
-        x=material_data[x_axis].iloc[0],
         y=material_data[y_axis].iloc[0],
+        x=material_data[x_axis].iloc[0],
         text=material,
         showarrow=False,
         font=dict(color='white', size=12)
