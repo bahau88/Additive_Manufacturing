@@ -47,7 +47,7 @@ for material in selected_materials:
             size=50,  # Adjust the size of the markers
             symbol='circle',
             color=color,  # Use random color
-            line=dict(width=1, color='#f0f2f6')
+            line=dict(width=3, color='#dad0c0')
         ),
         name=material,
         hovertemplate=f'{y_axis}: %{{y}}<br>{x_axis}: %{{x}}'
