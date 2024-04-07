@@ -44,10 +44,10 @@ for material in selected_materials:
         y=material_data[y_axis],
         mode='markers',
         marker=dict(
-            size=30,  # Adjust the size of the markers
+            size=50,  # Adjust the size of the markers
             symbol='circle',
             color=color,  # Use random color
-            line=dict(width=1, color='black')
+            line=dict(width=0, color='black')
         ),
         name=material,
         hovertemplate=f'{x_axis}: %{{x}}<br>{y_axis}: %{{y}}'
