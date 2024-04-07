@@ -2,12 +2,16 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 import random
+import warnings
+
+# Suppress CachedObjectMutationWarning
+warnings.filterwarnings("ignore", category=st.experimental_mutation_warning)
 
 # Load the dataset from the provided link
 @st.cache
 def load_data():
     df = pd.read_csv('https://raw.githubusercontent.com/bahau88/Additive_Manufacturing/main/materialpropertiescsv.csv')
-    return df.copy()  # Create a copy of the dataframe
+    return df
 
 df = load_data()
 
@@ -25,7 +29,7 @@ for col in numeric_cols:
 selected_materials = st.multiselect("Select Material(s)", df['Material'].unique())
 
 # Filter the dataset based on selected materials
-filtered_data = df[df['Material'].isin(selected_materials)].copy()  # Create a copy of the filtered dataframe
+filtered_data = df[df['Material'].isin(selected_materials)]
 
 # Axis selection
 x_axis = st.selectbox("Select X Axis", numeric_cols)
@@ -44,10 +48,10 @@ for material in selected_materials:
         y=material_data[y_axis],
         mode='markers',
         marker=dict(
-            size=30,  # Adjust the size of the markers
+            size=50,  # Adjust the size of the markers
             symbol='circle',
             color=color,  # Use random color
-            line=dict(width=1, color='black')
+            line=dict(width=0, color='black')
         ),
         name=material,
         hovertemplate=f'{x_axis}: %{{x}}<br>{y_axis}: %{{y}}'
