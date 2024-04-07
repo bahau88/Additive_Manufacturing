@@ -17,6 +17,7 @@ numeric_cols = ['Elastic Modulus', 'Shear Modulus', 'Mass Density', 'Tensile Str
                 'Thermal Conductivity', 'Specific Heat', 'Material Damping Ratio', 
                 'Minimum Temperature', 'Maximum Temperature', 'Electricity Conductivity', 'Price']
 
+# Clean the data frame
 for col in numeric_cols:
     df[col] = df[col].replace(',', '', regex=True)
     df[col] = pd.to_numeric(df[col], errors='coerce')
@@ -47,7 +48,7 @@ for material in selected_materials:
             size=50,  # Adjust the size of the markers
             symbol='circle',
             color=color,  # Use random color
-            line=dict(width=0, color='black')
+            line=dict(width=, color='black')
         ),
         name=material,
         hovertemplate=f'{x_axis}: %{{x}}<br>{y_axis}: %{{y}}'
