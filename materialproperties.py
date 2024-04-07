@@ -2,10 +2,11 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 import random
+
 import warnings
 
-# Suppress CachedObjectMutationWarning
-warnings.filterwarnings("ignore", category=st.experimental_mutation_warning)
+# Filter out the specific warning
+warnings.filterwarnings("ignore", category=streamlit.runtime.legacy_caching.caching.CachedObjectMutationWarning)
 
 # Load the dataset from the provided link
 @st.cache
@@ -48,10 +49,10 @@ for material in selected_materials:
         y=material_data[y_axis],
         mode='markers',
         marker=dict(
-            size=50,  # Adjust the size of the markers
+            size=30,  # Adjust the size of the markers
             symbol='circle',
             color=color,  # Use random color
-            line=dict(width=0, color='black')
+            line=dict(width=1, color='black')
         ),
         name=material,
         hovertemplate=f'{x_axis}: %{{x}}<br>{y_axis}: %{{y}}'
