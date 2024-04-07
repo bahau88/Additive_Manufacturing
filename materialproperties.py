@@ -1,7 +1,6 @@
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
-import random
 
 # Load the dataset from the provided link
 @st.cache
@@ -37,17 +36,15 @@ fig = go.Figure()
 # Add traces for each selected material
 for material in selected_materials:
     material_data = filtered_data[filtered_data['Material'] == material]
-    # Generate a random color for each material
-    color = "#{:06x}".format(random.randint(0, 0xFFFFFF))
     fig.add_trace(go.Scatter(
         x=material_data[x_axis],
         y=material_data[y_axis],
         mode='markers',
         marker=dict(
-            size=50,  # Adjust the size of the markers
+            size=30,  # Adjust the size of the markers
             symbol='circle',
-            color=color,  # Use random color
-            line=dict(width=0, color='black')
+            color='#100aed',
+            line=dict(width=1, color='black')
         ),
         name=material,
         hovertemplate=f'{x_axis}: %{{x}}<br>{y_axis}: %{{y}}'
