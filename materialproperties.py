@@ -4,7 +4,7 @@ import streamlit as st
 import random
 
 # Load the dataset from the provided link
-@st.cache
+@st.cache(allow_output_mutation=True)
 def load_data():
     df = pd.read_csv('https://raw.githubusercontent.com/bahau88/Additive_Manufacturing/main/materialpropertiescsv.csv')
     return df
