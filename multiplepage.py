@@ -101,7 +101,9 @@ if selected == "Material":
     for material in selected_materials:
         material_data = filtered_data[filtered_data['Material'] == material]
         # Generate a random color for each material
-        color = "#{:06x}".format(random.randint(0, 0xFFFFFF))
+        
+        #color = "#{:06x}".format(random.randint(0, 0xFFFFFF))
+        color = "#9478ff"
         fig.add_trace(go.Scatter(
             x=material_data[x_axis],
             y=material_data[y_axis],
