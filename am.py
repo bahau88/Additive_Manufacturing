@@ -56,30 +56,7 @@ if st.button("Predict"):
     st.write(f"Predicted Tension Strength: {tension_strength}")
     st.write(f"Predicted Elongation: {elongation}")
 
-button_css = """
-<style>
-/* Customize button appearance */
-.btn-primary {
-    background-color: #000 !important;
-    color: white !important;
-    border: none !important;
-}
 
-.btn-primary:hover {
-    background-color: #000 !important;
-}
-</style>
-"""
-
-st.markdown(button_css, unsafe_allow_html=True)
-
-slider_css = """
-<style>
-/* Customize slider appearance */
-.css-1w9r4ko {
-    background-color: #000 !important;
-}
-</style>
 """
 
 st.markdown(slider_css, unsafe_allow_html=True)
