@@ -11,9 +11,6 @@ logo_path = "https://www.irt-saintexupery.com/wp-content/uploads/2021/02/logo_IR
 # Display the logo or picture in the sidebar
 st.sidebar.image(logo_path, use_column_width=True)
 
-# Set Streamlit page configuration
-st.set_page_config(page_title="Snowflake Healthcare App", page_icon=":hospital:", layout="wide", initial_sidebar_state="expanded")
-
 with st.sidebar:
     selected = option_menu(
     menu_title = None,
