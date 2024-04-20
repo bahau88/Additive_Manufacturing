@@ -12,13 +12,13 @@ def contact():
     st.write("You're on the Contact page.")
     # Add your contact page content here
 
-# Sidebar navigation
-nav_selection = st.sidebar.radio("Navigation", ["Home", "About", "Contact"])
+# Sidebar navigation with icons and links
+nav_selection = st.sidebar.radio("Menu", ["Home 🏠", "About ℹ️", "Contact 📞"])
 
 # Main content based on sidebar selection
-if nav_selection == "Home":
+if "Home" in nav_selection:
     home()
-elif nav_selection == "About":
+elif "About" in nav_selection:
     about()
-elif nav_selection == "Contact":
+elif "Contact" in nav_selection:
     contact()
