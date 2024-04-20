@@ -60,13 +60,13 @@ button_css = """
 <style>
 /* Customize button appearance */
 .btn-primary {
-    background-color: rgb(255, 75, 75) !important;
+    background-color: #000 !important;
     color: white !important;
     border: none !important;
 }
 
 .btn-primary:hover {
-    background-color: rgb(200, 50, 50) !important;
+    background-color: #000 !important;
 }
 </style>
 """
@@ -77,7 +77,7 @@ slider_css = """
 <style>
 /* Customize slider appearance */
 .css-1w9r4ko {
-    background-color: rgb(255, 75, 75) !important;
+    background-color: #000 !important;
 }
 </style>
 """
