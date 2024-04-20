@@ -56,7 +56,7 @@ if st.button("Predict"):
     st.write(f"Predicted Elongation: {elongation}")
 
 # Custom CSS styling for sliders
-st.markdown(
+st.slider(
     """
     <style>
     .st-bk {
