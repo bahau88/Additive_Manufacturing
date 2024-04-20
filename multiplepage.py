@@ -167,7 +167,7 @@ if selected == "3D Printing":
     rf_elongation.fit(df[features], df['elongation'])
     
     # Streamlit UI
-    st.title("Quality Prediction App")
+    st.title("3D Printing Quality Estimator")
     st.write("Enter the parameters below to predict quality metrics.")
     
     # User input for parameters
