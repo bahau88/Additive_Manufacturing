@@ -1,4 +1,5 @@
 import streamlit as st
+VERSION = "1.27"
 
 def home():
     st.write("Welcome to the Home page!")
