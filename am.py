@@ -3,15 +3,6 @@ import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestRegressor
 
-# Custom CSS to modify slider color
-slider_color = """
-<style>
-/* Modify the slider color */
-.st-d8 .decoration {
-  background-color: #000 !important;
-}
-</style>
-"""
 
 # Load the trained models
 rf_roughness = RandomForestRegressor(n_estimators=100, random_state=42)
@@ -36,6 +27,17 @@ rf_elongation.fit(df[features], df['elongation'])
 # Streamlit UI
 st.title("Quality Prediction App")
 st.write("Enter the parameters below to predict quality metrics.")
+
+# Custom CSS to modify slider color
+slider_color = """
+<style>
+/* Modify the slider color */
+.css-2trqyj-inline, .decoration {
+  background: linear-gradient(90deg, rgba(255,75,75,1) 0%, rgba(255,204,0,1) 50%, rgba(29,233,182,1) 100%) !important;
+  border-radius: 5px;
+}
+</style>
+"""
 
 # User input for parameters
 layer_height = st.slider("Layer Height", min_value=0.01, max_value=0.1, step=0.01, value=0.02)
