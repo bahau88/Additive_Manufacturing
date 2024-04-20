@@ -28,16 +28,13 @@ rf_elongation.fit(df[features], df['elongation'])
 st.title("Quality Prediction App")
 st.write("Enter the parameters below to predict quality metrics.")
 
-# Custom CSS to modify slider color
-slider_color = """
-<style>
-/* Modify the slider color */
-.css-2trqyj-inline, .decoration {
-  background: linear-gradient(90deg, rgba(255,75,75,1) 0%, rgba(255,204,0,1) 50%, rgba(29,233,182,1) 100%) !important;
-  border-radius: 5px;
-}
-</style>
-"""
+
+ styles={
+        #"container": {"padding": "0!important", "background-color": "#fafafa"},
+        #"icon": {"color": "orange", "font-size": "25px"}, 
+        "nav-link": {"font-size": "15px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
+        "nav-link-selected": {"background-color": "#9478ff"},
+    }
 
 # User input for parameters
 layer_height = st.slider("Layer Height", min_value=0.01, max_value=0.1, step=0.01, value=0.02)
