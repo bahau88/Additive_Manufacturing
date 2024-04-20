@@ -7,7 +7,7 @@ from streamlit_option_menu import option_menu
 
 with st.sidebar:
     selected = option_menu(
-    menu_title = "Main Menu",
+    menu_title = None,
     options = ["Home","Warehouse","Query Optimization and Processing","Storage","Contact Us"],
     icons = ["house","gear","activity","snowflake","envelope"],
     menu_icon = "cast",
