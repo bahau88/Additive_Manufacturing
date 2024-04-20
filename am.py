@@ -8,7 +8,7 @@ slider_color = """
 <style>
 /* Modify the slider color */
 .st-d8 .decoration {
-  background-color: rgb(255, 75, 75) !important;
+  background-color: #000 !important;
 }
 </style>
 """
