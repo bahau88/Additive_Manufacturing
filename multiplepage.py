@@ -9,7 +9,7 @@ with st.sidebar:
     selected = option_menu(
     menu_title = None,
     options = ["Material","3D Printing","Manufacturing Process","Quick Quotation","Feedback"],
-    icons = ["arrow-clockwise","gear","activity","coin","envelope"],
+    icons = ["bricks","gear","activity","coin","envelope"],
     menu_icon = "cast",
     default_index = 0,
     #orientation = "horizontal",
