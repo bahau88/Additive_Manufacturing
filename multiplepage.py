@@ -8,8 +8,8 @@ from streamlit_option_menu import option_menu
 with st.sidebar:
     selected = option_menu(
     menu_title = "IRT Saint Exupery",
-    options = ["Home","Warehouse","Query Optimization and Processing","Storage","Contact Us"],
-    icons = ["house","gear","activity","snowflake","envelope"],
+    options = ["Home","Warehouse","Query Optimization and Processing","Storage","Contact Us", "Contact Us", "Contact Us"],
+    #icons = ["house","gear","activity","snowflake","envelope"],
     menu_icon = "cast",
     default_index = 0,
     #orientation = "horizontal",
