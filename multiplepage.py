@@ -19,17 +19,13 @@ with st.sidebar:
     menu_icon = "cast",
     default_index = 0,
     #orientation = "horizontal",
+    styles={
+        #"container": {"padding": "0!important", "background-color": "#fafafa"},
+        #"icon": {"color": "orange", "font-size": "25px"}, 
+        #"nav-link": {"font-size": "25px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
+        "nav-link-selected": {"background-color": "#9478ff"},
+    }
 )
-
-# Custom CSS to change the color of the selected menu item
-custom_css = f"""
-<style>
-.sidebar .sidebar-content .option_menu-container .selected {{
-    background-color: #f0f0f0; /* Change the color as needed */
-}}
-</style>
-"""
-st.markdown(custom_css, unsafe_allow_html=True)
 
 
 if selected == "Home":
