@@ -1,5 +1,20 @@
 import streamlit as st
-st.set_config_file(config_file="config.toml")
+
+import toml
+
+# Read the theme configuration from config.toml
+config = toml.load("config.toml")
+
+# Extract theme configurations
+theme_config = config.get("theme", {})
+
+# Apply theme configurations using st.set_page_config()
+st.set_page_config(
+    **theme_config  # Apply theme configurations from config.toml
+)
+
+
+
 import pandas as pd
 import numpy as np
 import snowflake.connector
