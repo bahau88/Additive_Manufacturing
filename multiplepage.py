@@ -1,72 +1,141 @@
 import streamlit as st
+from st_pages import Page, Section, show_pages, add_page_title, hide_pages
 
-VERSION = "1.28"
+add_page_title()
 
-st.set_page_config(
-    page_title=f"New features in Streamlit 1.28",
-    page_icon=':memo:',
-    initial_sidebar_state="expanded",
-    layout="wide",
+show_pages(
+    [   
+        Page("dezoomcamp/DE_Zoomcamp.py", "DE Zoomcamp", "💻"),
+
+        # # 2024 Content
+        Section("DE Zoomcamp 2024", "🧙‍♂️"),
+        Page("dezoomcamp/2024_cohort/Course_Overview.py", "Course Overview", "📚", in_section=True),
+        Page("dezoomcamp/2024_cohort/Module_1_Introduction_&_Prerequisites.py", "Module 1 Introduction & Prerequisites", "1️⃣", in_section=True),
+        Page("dezoomcamp/2024_cohort/Module_2_Workflow_Orchestration.py", "Module 2 Workflow Orchestration", "2️⃣", in_section=True),
+        Page("dezoomcamp/2024_cohort/Workshop_1_Data_Ingestion.py", "Workshop 1 Data Ingestion", "🛠️", in_section=True),
+        Page("dezoomcamp/2024_cohort/Module_3_Data_Warehouse.py", "Module 3 Data Warehouse and BigQuery", "3️⃣", in_section=True),
+        Page("dezoomcamp/2024_cohort/Module_4_Analytics_Engineering.py", "Module 4 Analytics Engineering", "4️⃣", in_section=True),
+        Page("dezoomcamp/2024_cohort/Module_5_Batch_Processing.py", "Module 5 Batch Processing", "5️⃣", in_section=True),
+        Page("dezoomcamp/2024_cohort/Workshop_2_Stream_Processing_with_SQL.py", "Workshop 2 Stream Processing with SQL", "🛠️", in_section=True),
+        Page("dezoomcamp/2024_cohort/Module_6_Stream_Processing.py", "Module 6 Stream Processing", "6️⃣", in_section=True),
+        Page("dezoomcamp/2024_cohort/Course_Project.py", "Course Project", "🏆", in_section=True),
+
+        # 2023 Content
+        Section("DE Zoomcamp 2023", "👨‍🔧"),
+        Page("dezoomcamp/2023_cohort/Course_Overview.py", "Course Overview", "📚", in_section=True),
+        Page("dezoomcamp/2023_cohort/Week_1_Introduction_&_Prerequisites.py", "Week 1 Introduction & Prerequisites", "1️⃣", in_section=True),
+        Page("dezoomcamp/2023_cohort/Week_2_Workflow_Orchestration.py", "Week 2 Workflow Orchestration", "2️⃣", in_section=True),
+        Page("dezoomcamp/2023_cohort/Week_3_Data_Warehouse.py", "Week 3 Data Warehouse", "3️⃣", in_section=True),
+        Page("dezoomcamp/2023_cohort/Week_4_Analytics_Engineering.py", "Week 4 Analytics Engineering", "4️⃣", in_section=True),
+        Page("dezoomcamp/2023_cohort/Week_5_Batch_Processing.py", "Week 5 Batch Processing", "5️⃣", in_section=True),
+        Page("dezoomcamp/2023_cohort/Week_6_Stream_Processing.py", "Week 6 Stream Processing", "6️⃣", in_section=True),
+        Page("dezoomcamp/2023_cohort/Week_7_Project.py", "Week 7 Project", "7️⃣", in_section=True),
+        Page("dezoomcamp/2023_cohort/Homework_Quizzes.py", "Homework Quizzes", "📝", in_section=True),
+        
+        Page("dezoomcamp/Datasets.py", "Datasets", icon="💾", in_section=False),
+        Page("dezoomcamp/Certificate.py", "Certificate", "📜", in_section=False),
+        Page("dezoomcamp/FAQ.py", "FAQ", "❔", in_section=False),
+        Page("dezoomcamp/Contact.py", "Contact", icon="📩", in_section=False),   
+        Page("dezoomcamp/Contact_thanks.py", "Thank you", icon="💌"),   
+        Page("dezoomcamp/About.py", "About", icon="🖼️", in_section=False) 
+    ]
 )
 
-intro = f"""
-This release launches <a href="https://release128.streamlit.app/AppTest" target="_self">AppTest</a>, improvements to the <a href="https://release128.streamlit.app/Cache_spinner" target="_self">cache spinner</a>, a handy <a href="https://release128.streamlit.app/Dataframe_toolbar" target="_self">dataframe toolbar</a>, and <a href="https://release128.streamlit.app/st.connection" target="_self">st.connection</a> is no longer experimental – it's fully supported! The release also includes bug fixes.
+hide_pages(["Thank you"])
+
+st.markdown("### 👨‍🔧 Data Engineering Zoomcamp by [DataTalksClub](https://datatalks.club/)")
+
+st.image("https://pbs.twimg.com/media/FmmYA2YWYAApPRB.png")
+
+st.info("Original Course Repository on [Github](https://github.com/DataTalksClub/data-engineering-zoomcamp)")
+
+st.markdown("---")
+
+with st.expander("Sign up here for 2024 Cohort"):
+    st.markdown("""
+    
+    <a href="https://airtable.com/appzbS8Pkg9PL254a/shr6oVXeQvSI5HuWD"><img src="https://user-images.githubusercontent.com/875246/185755203-17945fd1-6b64-46f2-8377-1011dcb1a444.png" height="50" /></a>
+
+    #
+
+    - Register in [DataTalks.Club's Slack](https://datatalks.club/slack.html)
+    - Join the [`#course-data-engineering`](https://app.slack.com/client/T01ATQK62F8/C01FABYF2RG) channel
+    - Join the [course Telegram channel with announcements](https://t.me/dezoomcamp)
+    - The videos are published on [DataTalks.Club's YouTube channel](https://www.youtube.com/c/DataTalksClub) in [the course playlist](https://www.youtube.com/playlist?list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb)
+    - [Frequently asked technical questions](https://docs.google.com/document/d/19bnYs80DwuUimHM65UV3sylsCn2j1vziPOwzBwQrebw/edit?usp=sharing)
+        
+    #""", unsafe_allow_html=True)
+
+st.markdown("""
+### 👨‍🎓 Taking the course
+
+##### 👨‍👦‍👦 2024 Cohort
+
+* **Start**: 15 January 2024 (Monday) at 17:00 CET
+* **Registration link**: https://airtable.com/shr6oVXeQvSI5HuWD
+* [Cohort folder](cohorts/2024/) with homeworks and deadlines 
+
+
+##### 👨‍🔧 Self-paced mode
+
+All the materials of the course are freely available, so that you
+can take the course at your own pace
+
+* Follow the suggested syllabus (see below) week by week
+* You don't need to fill in the registration form. Just start watching the videos and join Slack
+* Check [FAQ](https://docs.google.com/document/d/19bnYs80DwuUimHM65UV3sylsCn2j1vziPOwzBwQrebw/edit?usp=sharing) if you have problems
+* If you can't find a solution to your problem in FAQ, ask for help in Slack
+
+### 🔎 Overview""", unsafe_allow_html=True)
+
+
+st.image("https://raw.githubusercontent.com/DataTalksClub/data-engineering-zoomcamp/main/images/architecture/photo1700757552.jpeg")
+
+
+st.markdown("""
+### 📓 Prerequisites
+
+To get the most out of this course, you should feel comfortable with coding and command line
+and know the basics of SQL. Prior experience with Python will be helpful, but you can pick
+Python relatively fast if you have experience with other programming languages.
+
+Prior experience with data engineering is not required.
+
+### 👨‍🏫 Instructors
+
+- [Ankush Khanna](https://linkedin.com/in/ankushkhanna2)
+- [Victoria Perez Mola](https://www.linkedin.com/in/victoriaperezmola/)
+- [Alexey Grigorev](https://linkedin.com/in/agrigorev)
+- [Matt Palmer](https://www.linkedin.com/in/matt-palmer/)
+- [Luis Oliveira](https://www.linkedin.com/in/lgsoliveira/)
+- [Michael Shoemaker](https://www.linkedin.com/in/michaelshoemaker1/)
+
+Past instructors:
+
+- [Sejal Vaidya](https://www.linkedin.com/in/vaidyasejal/)
+- [Irem Erturk](https://www.linkedin.com/in/iremerturk/)
+
+### ❔ Asking for help in Slack
+
+The best way to get support is to use [DataTalks.Club's Slack](https://datatalks.club/slack.html). Join the [`#course-data-engineering`](https://app.slack.com/client/T01ATQK62F8/C01FABYF2RG) channel.
+
+To make discussions in Slack more organized:
+
+* Follow [these recommendations](asking-questions.md) when asking for help
+* Read the [DataTalks.Club community guidelines](https://datatalks.club/slack/guidelines.html)
+
+---
+            
+### ⭐ Star the project on Github  <iframe src="https://ghbtns.com/github-btn.html?user=hamagistral&repo=de-zoomcamp-ui&type=star&count=true"  width="150" height="20" title="GitHub"></iframe>   
+            
+##### 🖼️ Course UI was made by [Hamagistral](https://github.com/Hamagistral) 
+""", unsafe_allow_html=True)
+
+hide_streamlit_style = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+</style>
 """
 
-release_notes = f"""
----
-**Highlights**
-* 🧪 Introducing a new testing framework for Streamlit apps! Check out our [documentation](https://docs.streamlit.io/library/api-reference/app-testing) to learn how to build automated tests for your apps.
-* 💻 Announcing the general availability of `st.connection`, a command to conveniently manage connections in Streamlit apps. Check out the [docs](https://docs.streamlit.io/library/api-reference/connections/st.connection) to learn more.
-* ❄️ `SnowparkConnection` has been upgraded to the new and improved `SnowflakeConnection` — the same, great functionality *plus more*! Check out our [built-in connections](https://docs.streamlit.io/library/api-reference/connections#built-in-connections).
-* 🛠️ `st.dataframe` and `st.data_editor` have a new toolbar! Users can search and download data in addition to enjoying improved UI for row additions and deletions. See our updated guide on [Dataframes](https://docs.streamlit.io/library/advanced-features/dataframes).
-
-**Notable changes**
-* 🌀 When using a spinner with cached functions, the spinner will be overlaid instead of pushing content down ([#7488](https://github.com/streamlit/streamlit/pull/7488)).
-* 📅 `st.data_editor` now supports datetime index editing ([#7483](https://github.com/streamlit/streamlit/pull/7483)).
-* 🔢 Improved support for `decimal.Decimal` in `st.dataframe` and `st.data_editor` ([#7475](https://github.com/streamlit/streamlit/pull/7475)).
-* 🥸 Global keywargs were added for `hashlib` ([#7527](https://github.com/streamlit/streamlit/pull/7527), [#7526](https://github.com/streamlit/streamlit/issues/7526)). Thanks, [DueViktor](https://github.com/DueViktor)!
-* 📋 `st.components.v1.iframe` now permits writing to clipboard ([#7487](https://github.com/streamlit/streamlit/pull/7487)). Thanks, [dilipthakkar](https://github.com/dilipthakkar)!
-* 📝 `SafeSessionState` disconnect was replaced with script runner yield points for improved efficiency and clarity ([#7373](https://github.com/streamlit/streamlit/pull/7373)).
-* 🤖 The Langchain callback handler will show the full input string inside the body of a `st.status` when the input string is too long to show as a label ([#7478](https://github.com/streamlit/streamlit/pull/7478)). Thanks, [pokidyshev](https://github.com/pokidyshev)!
-* 📈 `st.graphviz_chart` now supports using different Graphviz layout engines ([#7505](https://github.com/streamlit/streamlit/pull/7505), [#4089](https://github.com/streamlit/streamlit/issues/4089)).
-* 🦋 Assorted visual tweaks ([#7486](https://github.com/streamlit/streamlit/pull/7486), [#7592](https://github.com/streamlit/streamlit/pull/7592)).
-* 📊 `plotly.js` was upgraded to version 2.26.1 ([#7449](https://github.com/streamlit/streamlit/pull/7449), [#7476](https://github.com/streamlit/streamlit/issues/7476), [#7045](https://github.com/streamlit/streamlit/issues/7045)).
-* 💽 Legacy serialization for DataFrames was removed. All DataFrames will be serialized by Apache Arrow ([#7429](https://github.com/streamlit/streamlit/pull/7429)).
-* 🖼️ Compatibility for Pillow 10.x was added ([#7442](https://github.com/streamlit/streamlit/pull/7442)).
-* 📬 Migrated `_stcore/allowed-message-origins` endpoint to `_stcore/host-config` ([#7342](https://github.com/streamlit/streamlit/pull/7342)).
-* 💬 Added `post_parent_message` platform command to send custom messages from a Streamlit app to its parent window ([#7522](https://github.com/streamlit/streamlit/pull/7522)).
-
-**Other changes**
-* ⌨️ Improved string dtype handling for DataFrames ([#7479](https://github.com/streamlit/streamlit/pull/7479)).
-* ✒️ `st.write` will avoid using `unsafe_allow_html=True` if possible ([#7432](https://github.com/streamlit/streamlit/pull/7432)).
-* 🐛 Bug fix: Implementation of `st.expander` was simplified for improved behavior and consistency ([#7247](https://github.com/streamlit/streamlit/pull/7247), [#2839](https://github.com/streamlit/streamlit/issues/2839), [#4111](https://github.com/streamlit/streamlit/issues/4111), [#4651](https://github.com/streamlit/streamlit/issues/4651), [#5604](https://github.com/streamlit/streamlit/issues/5604)).
-* 🪲 Bug fix: Multipage links in the sidebar are now aligned with other sidebar elements ([#7531](https://github.com/streamlit/streamlit/pull/7531)).
-* 🐜 Bug fix: `st.chat_input` won’t incorrectly prompt for `label` parameter in IDEs ([#7560](https://github.com/streamlit/streamlit/pull/7560)).
-* 🐝 Bug fix: Scroll bars correctly overlay `st.dataframe` and `st.data_editor` without adding empty space ([#7090](https://github.com/streamlit/streamlit/pull/7090), [#6888](https://github.com/streamlit/streamlit/issues/6888)).
-* 🐞 Bug fix: `st.chat_message` behaves correctly with the removal of AutoSizer ([#7504](https://github.com/streamlit/streamlit/pull/7504), [#7473](https://github.com/streamlit/streamlit/issues/7473)).
-* 🕷️ Bug fix: Anchor links are reliably produced for non-English headers ([#7454](https://github.com/streamlit/streamlit/pull/7454), [#5291](https://github.com/streamlit/streamlit/issues/5291)).
-* ☃️ Bug fix: `st.connections.SnowparkConnection` more accurately detects when it’s running within Streamlit in Snowflake ([#7502](https://github.com/streamlit/streamlit/pull/7502)).
-* 🪳 Bug fix: A user-friendly warning is shown when exceeding the size limitations of a pandas `Styler` object ([#7497](https://github.com/streamlit/streamlit/pull/7497), [#5953](https://github.com/streamlit/streamlit/issues/5953)).
-* 🪰 Bug fix: `st.data_editor` automatically converts non-string column names to strings ([#7485](https://github.com/streamlit/streamlit/pull/7485), [#6950](https://github.com/streamlit/streamlit/issues/6950)).
-* 🦠 Bug fix: `st.data_editor` correctly identifies non-range indices as a required column ([#7481](https://github.com/streamlit/streamlit/pull/7481), [#6995](https://github.com/streamlit/streamlit/issues/6995)).
-* 🦟 Bug fix: `st.file_uploader` displays compound file extensions like `csv.gz` correctly ([#7362](https://github.com/streamlit/streamlit/pull/7362)). Thanks, [mo42](https://github.com/mo42)!
-* 🦂 Bug fix: Column Configuration no longer uses deprecated type checks ([#7496](https://github.com/streamlit/streamlit/pull/7496), [#7477](https://github.com/streamlit/streamlit/pull/7477), [#7550](https://github.com/streamlit/streamlit/issues/7550)). Thanks, [c-bik](https://github.com/c-bik)!
-* 🦗 Bug fix: Additional toolbar items no longer stack vertically ([#7470](https://github.com/streamlit/streamlit/pull/7470), [#7471](https://github.com/streamlit/streamlit/issues/7471)).
-* 🕸️ Bug fix: Column Configuration no longer causes a type warning in Mypy ([#7457](https://github.com/streamlit/streamlit/pull/7457)). Thanks, [kopp](https://github.com/kopp)!
-* 🐌 Bug fix: Bokeh Sliders no longer cause JavaScript errors ([#7441](https://github.com/streamlit/streamlit/pull/7441), [#7171](https://github.com/streamlit/streamlit/issues/7171)).
-* 🦎 Bug fix: Caching now recognizes DataFrames with the same values but different column names as different ([#7331](https://github.com/streamlit/streamlit/pull/7331), [#7086](https://github.com/streamlit/streamlit/issues/7086)).
-
----
-"""
-# End release updates
-
-def draw_main_page():
-
-    st.title(f"Welcome to Streamlit {VERSION}! :wave:", anchor=False)
-
-    st.markdown(intro,unsafe_allow_html=True)
-
-    st.write(release_notes)
-
-draw_main_page()
+st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
