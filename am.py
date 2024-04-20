@@ -54,19 +54,3 @@ if st.button("Predict"):
     st.write(f"Predicted Roughness: {roughness}")
     st.write(f"Predicted Tension Strength: {tension_strength}")
     st.write(f"Predicted Elongation: {elongation}")
-
-# Custom CSS styling for sliders
-st.markdown(
-    """
-    <style>
-    .st-ei,
-    .st-eq,
-    .st-et,
-    .st-ew,
-    .st-f0 {
-        background-color: black !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
