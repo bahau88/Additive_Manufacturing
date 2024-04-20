@@ -20,6 +20,18 @@ with st.sidebar:
     default_index = 0,
     #orientation = "horizontal",
 )
+
+# Custom CSS to change the color of the selected menu item
+custom_css = f"""
+<style>
+.sidebar .sidebar-content .{selected.lower()} {{
+    background-color: #9478ff; /* Change the color as needed */
+}}
+</style>
+"""
+st.markdown(custom_css, unsafe_allow_html=True)
+
+
 if selected == "Home":
     st.header('Snowflake Healthcare App')
     # Create a row layout
