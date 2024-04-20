@@ -9,3 +9,4 @@ pygwalker
 numpy
 sklearn
 RandomForestRegressor
+sklearn.ensemble
