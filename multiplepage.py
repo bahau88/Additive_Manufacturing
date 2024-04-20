@@ -5,6 +5,9 @@ import snowflake.connector
 import streamlit_option_menu
 from streamlit_option_menu import option_menu
 
+# Add your image file path
+logo_path = "https://www.irt-saintexupery.com/wp-content/uploads/2021/02/logo_IRT-Saint-Exupery.png"
+
 with st.sidebar:
     selected = option_menu(
     menu_title = None,
