@@ -8,3 +8,4 @@ streamlit_extras
 pygwalker
 numpy
 scikit-learn
+toml
