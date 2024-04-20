@@ -24,8 +24,8 @@ with st.sidebar:
 # Custom CSS to change the color of the selected menu item
 custom_css = f"""
 <style>
-.sidebar .sidebar-content .{selected.lower()} {{
-    background-color: #9478ff; /* Change the color as needed */
+.sidebar .sidebar-content .option_menu-container .selected {{
+    background-color: #f0f0f0; /* Change the color as needed */
 }}
 </style>
 """
