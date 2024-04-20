@@ -1,4 +1,5 @@
 import streamlit as st
+st.set_config_file(config_file="config.toml")
 import pandas as pd
 import numpy as np
 import snowflake.connector
