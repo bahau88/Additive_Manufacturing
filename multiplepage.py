@@ -1,4 +1,20 @@
 import streamlit as st
+
+st.markdown(
+    f"""
+    <style>
+        :root {{
+            --primary-color: {st.config.theme.primary_color};
+            --background-color: {st.config.theme.background_color};
+            --secondary-background-color: {st.config.theme.secondary_background_color};
+            --text-color: {st.config.theme.text_color};
+            --font: {st.config.theme.font};
+        }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 import pandas as pd
 import numpy as np
 import snowflake.connector
