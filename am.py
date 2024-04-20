@@ -3,6 +3,16 @@ import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestRegressor
 
+# Custom CSS to modify slider color
+slider_color = """
+<style>
+/* Modify the slider color */
+.st-d8 .decoration {
+  background-color: rgb(255, 75, 75) !important;
+}
+</style>
+"""
+
 # Load the trained models
 rf_roughness = RandomForestRegressor(n_estimators=100, random_state=42)
 rf_tension_strength = RandomForestRegressor(n_estimators=100, random_state=42)
