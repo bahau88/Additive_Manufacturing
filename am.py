@@ -28,14 +28,6 @@ rf_elongation.fit(df[features], df['elongation'])
 st.title("Quality Prediction App")
 st.write("Enter the parameters below to predict quality metrics.")
 
-
- styles={
-        #"container": {"padding": "0!important", "background-color": "#fafafa"},
-        #"icon": {"color": "orange", "font-size": "25px"}, 
-        "nav-link": {"font-size": "15px", "text-align": "left", "margin":"0px", "--hover-color": "#eee"},
-        "nav-link-selected": {"background-color": "#9478ff"},
-    }
-
 # User input for parameters
 layer_height = st.slider("Layer Height", min_value=0.01, max_value=0.1, step=0.01, value=0.02)
 wall_thickness = st.slider("Wall Thickness", min_value=5, max_value=10, step=1, value=7)
@@ -64,3 +56,30 @@ if st.button("Predict"):
     st.write(f"Predicted Tension Strength: {tension_strength}")
     st.write(f"Predicted Elongation: {elongation}")
 
+button_css = """
+<style>
+/* Customize button appearance */
+.btn-primary {
+    background-color: rgb(255, 75, 75) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.btn-primary:hover {
+    background-color: rgb(200, 50, 50) !important;
+}
+</style>
+"""
+
+st.markdown(button_css, unsafe_allow_html=True)
+
+slider_css = """
+<style>
+/* Customize slider appearance */
+.css-1w9r4ko {
+    background-color: rgb(255, 75, 75) !important;
+}
+</style>
+"""
+
+st.markdown(slider_css, unsafe_allow_html=True)
