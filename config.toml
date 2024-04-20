@@ -1,3 +1,3 @@
 [theme]
-primaryColor="#0062FF"
-backgroundColor="#FFFFFF"
+base="light"
+primaryColor="#0062ff"
